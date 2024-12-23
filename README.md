@@ -36,13 +36,56 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 /* write all the steps invloved */
 
+1.Open the quartus prime software
+
+2.Mention th code in new file and compile, select tools- Netlist viewers-RTL viewver.
+
+3.Open new file and select world program UWF for waveform.
+
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by:Esakkindhar
+
+RegisterNumber:24001907
 */
 
+module sr(s,r,clk,q,qbar);
+
+input s,r,clk;
+
+output reg q;
+
+output reg qbar;
+
+initial
+
+begin 
+
+q=0;
+
+qbar=1;
+
+end
+
+always@(posedge clk)
+
+begin
+
+ q=s|(~r&q);
+ 
+ qbar=r|(~s&~q);
+ 
+end
+
+endmodule
+
 **RTL LOGIC FOR FLIPFLOPS**
+![Screenshot (17)](https://github.com/user-attachments/assets/f2812076-3335-4f35-aea0-a1edc0517af5)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![Screenshot (16)](https://github.com/user-attachments/assets/96c10d6d-bbc3-4c75-83c8-210df92156d1)
 
 **RESULTS**
+Hence the implemention of SR flipflop using verilog and validating their functionality using their functional tables are proved
